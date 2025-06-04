@@ -6,13 +6,17 @@ pygame.init()
 
 # Settings
 WIDTH_OPTIONS = [600, 800, 1000]
+selected_size = WIDTH_OPTIONS[0]
+
+screen = pygame.display.set_mode((selected_size, selected_size))
+pygame.display.set_caption("BECAVE")
+
 FONT = pygame.font.SysFont(None, 36)
 clock = pygame.time.Clock()
 
 # Game states
 TITLE, SETTINGS, HELP, CHARACTER_SELECT, GAME = range(5)
 state = TITLE
-selected_size = WIDTH_OPTIONS[0]
 sound_on = True
 
 # Character data
@@ -23,9 +27,6 @@ characters = [
 ]
 char_index = 0
 player = None
-
-screen = pygame.display.set_mode((selected_size, selected_size))
-pygame.display.set_caption("BECAVE")
 
 # Basic button helper
 class Button:
